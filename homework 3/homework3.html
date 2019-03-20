@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Input your grade and click the button:</p>
+
+<input id="grade" value="60" />
+
+<button onclick="myFunction()">Check</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var grade, pass;
+  grade = document.getElementById("grade").value;
+  pass = (grade < 60) ? "FAIL":"PASS";
+  document.getElementById("demo").innerHTML = pass;
+}
+</script>
+
+</body>
+</html>
