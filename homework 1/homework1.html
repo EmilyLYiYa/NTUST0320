@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form>
+  First number:<br>
+  <input type="number" id="myData" value="0">
+  <br>
+  <br>
+  Last number:<br>
+  <input type="number" id="myData2" value="0">
+  <br><br>
+  <input type="submit" value="C">
+</form>
+	
+
+<br>
+
+	<script>
+	function add() {
+		var x,y
+		x = parseFloat(document.getElementById("myData").value)
+		y = parseFloat(document.getElementById("myData2").value)
+		document.getElementById("result").innerHTML = x + y;
+  		return x + y;
+	}
+	
+    function subtract() {
+		var x,y
+		x = parseFloat(document.getElementById("myData").value)
+		y = parseFloat(document.getElementById("myData2").value)
+		document.getElementById("result").innerHTML = x - y;
+  		return x - y;
+	}
+    
+    function multiple() {
+		var x,y
+		x = parseFloat(document.getElementById("myData").value)
+		y = parseFloat(document.getElementById("myData2").value)
+		document.getElementById("result").innerHTML = x * y;
+  		return x * y;
+	}
+    
+    function divide() {
+		var x,y
+		x = parseFloat(document.getElementById("myData").value)
+		y = parseFloat(document.getElementById("myData2").value)
+		document.getElementById("result").innerHTML = x / y;
+  		return x / y;
+	}
+</script>
+
+	<button onclick = "add()">+</button>
+    <button onclick = "subtract()">-</button>
+    <button onclick = "multiple()">*</button>
+    <button onclick = "divide()">/</button>
+
+	<h5>Result:</h5>
+	<output id="result"></output>
