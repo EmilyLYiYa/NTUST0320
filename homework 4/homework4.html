@@ -11,20 +11,34 @@
 	<script>
 		var c = document.getElementById("myCanvas");
 		var ctx = c.getContext("2d");
-		var size = 0;
-		var grd = ctx.createLinearGradient(0, 0, 200, 0);
-		grd.addColorStop(0,"purple");
-		grd.addColorStop(0,"lavendar");
-		ctx.fillStyle = "#FF0000";
-
-		setInterval(function() {
-			ctx.clearRect(0, 0, 200, 200);
-			ctx.fillRect(0, 0, size, size);
-			size++;
-
-			if(size > 200)
-			{ size = 0; }}, 30);
-		
+        x = 0; y = 0; j = 0;
+        var interval = 1000/60;
+        
+        setTimeout(function(){move();}, interval);
+        
+    function move()
+    {
+       // Create gradient
+		var grd = ctx.createLinearGradient(0,0,200,0);
+		grd.addColorStop(0,"red");
+		grd.addColorStop(1,"white");
+		// Fill with gradient
+		ctx.fillStyle = grd;
+		ctx.fillRect(x,y,150,10);
+        
+        if(y <= c.height)
+        {
+            y+=10;
+        }
+        
+        else if(y >= c.height)
+        {
+        	ctx.clearRect(x,j,150,10);
+            j+=10;
+        }
+        
+		setTimeout(function(){move();}, interval);
+	}	
 		</script>
 
 	<script language = javascript>
